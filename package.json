@@ -1,0 +1,46 @@
+{
+  "name": "WordMap",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "start": "node build",
+    "build": "babel src -d build --copy-files",
+    "test": "ava -s"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiyeopYang/WordMap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KiyeopYang/WordMap/issues"
+  },
+  "homepage": "https://github.com/KiyeopYang/WordMap#readme",
+  "dependencies": {
+    "async": "^2.6.0",
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-session": "^1.15.6",
+    "express-winston": "^2.4.0",
+    "mongoose": "^4.13.9",
+    "nconf": "^0.10.0",
+    "passport": "^0.4.0",
+    "winston": "^2.4.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "eslint": "^4.15.0"
+  },
+  "babel": {
+    "presets": [
+      "@ava/stage-4",
+      "stage-2"
+    ]
+  }
+}

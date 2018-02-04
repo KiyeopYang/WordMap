@@ -1,0 +1,6 @@
+try {
+  window.webpushConfig = JSON.parse('---configuration---');
+  var container=document.body?document.body:document.head;
+  var _wp=document.createElement('script');
+  _wp.id='webpushSrc',_wp.src= '---source---',container.appendChild(_wp);
+} catch(err){}
