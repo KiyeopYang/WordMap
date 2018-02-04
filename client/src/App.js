@@ -8,8 +8,7 @@ import {
 } from 'react-router-dom';
 import * as noticeDialogActions from './data/noticeDialog/actions';
 import loader from './data/loader/actions';
-import LandingPage from './scene/LandingPage';
-import ManagerPage from './scene/ManagerPage';
+import Main from './scene/Main';
 import NoticeDialog from './components/NoticeDialog';
 import loaderDOM from './modules/loader';
 
@@ -29,12 +28,8 @@ class App extends React.Component {
       <React.Fragment>
         <Switch>
           <Route
-            path="/manager"
-            component={ManagerPage}
-          />
-          <Route
             path="/"
-            component={LandingPage}
+            component={Main}
           />
         </Switch>
         <NoticeDialog

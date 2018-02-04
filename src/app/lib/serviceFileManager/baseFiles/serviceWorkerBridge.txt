@@ -1,1 +1,0 @@
-const randomnumber=Math.random()*5;importScripts('---serviceWorker---' + '?' + randomnumber);

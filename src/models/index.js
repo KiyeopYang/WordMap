@@ -1,9 +1,11 @@
-import Client from './client';
-import Website from './website';
-import Subscriber from './subscriber';
+import Game from './game';
+import Person from './person';
+import Word from './word';
+import Fault from './fault';
 
 export {
-  Client,
-  Website,
-  Subscriber,
+  Game,
+  Person,
+  Word,
+  Fault,
 };
