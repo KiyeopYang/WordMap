@@ -8,9 +8,10 @@ const waiting = () => {
     type: WAITING,
   };
 };
-const success = () => {
+const success = (person,) => {
   return {
     type: SUCCESS,
+    person,
   };
 };
 const failure = (error) => {
@@ -23,7 +24,7 @@ export const request = (phone) => {
   return (dispatch, getState) => {
     dispatch(waiting());
     return new Promise((resolve, reject) => {
-      fetch(`/api/person`, {
+      return fetch(`/api/person`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -31,9 +32,9 @@ export const request = (phone) => {
         }),
       })
         .then((res) => {
-          if (res.ok) { res.json(); }
+          if (res.ok) { return res.json(); }
           else {
-            res.json().then((error) => {
+            return res.json().then((error) => {
               throw error;
             });
           }

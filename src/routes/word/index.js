@@ -1,5 +1,6 @@
 import express from 'express';
 import logging from '../../logging';
+import passport from 'passport';
 import {
   Fault,
   Word,
@@ -8,6 +9,18 @@ import {
 const router = express.Router();
 
 const NAME = '단어';
+router.get(
+  '/length',
+  (req, res) => {
+    Word.count({}, (error, result) => {
+      if (error) {
+        logging.error(error);
+        return res.status(500).json({ message: `${NAME} 조회 에러` });
+      }
+      return res.json(result);
+    });
+  },
+);
 router.get('/', (req, res) => {
   Word
     .find({})

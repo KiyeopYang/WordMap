@@ -8,9 +8,6 @@ const Fault = new Schema({
   },
   word: {
     type: String,
-    index: {
-      unique: true,
-    },
   },
   wordId: {
     type: Schema.Types.ObjectId,

@@ -13,12 +13,12 @@ auth(passport);
 
 // 배포 환경에서 추적 로그 설정
 // https
-if (process.env.NODE_ENV === 'production') {
-  app.use((req, res, next) => {
-    if (req.secure) return next();
-    return res.redirect(`https://${req.headers.host}${req.url}`);
-  });
-}
+// if (process.env.NODE_ENV === 'production') {
+//   app.use((req, res, next) => {
+//     if (req.secure) return next();
+//     return res.redirect(`https://${req.headers.host}${req.url}`);
+//   });
+// }
 
 app.set('trust proxy', true);
 
@@ -69,9 +69,9 @@ app.use('/api', api);
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '../../', 'client/build')));
+  app.use(express.static(path.join(__dirname, '../', 'client/build')));
   app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../../', 'client/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../', 'client/build', 'index.html'));
   });
 }
 

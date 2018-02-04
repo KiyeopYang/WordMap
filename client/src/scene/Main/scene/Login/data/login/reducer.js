@@ -7,6 +7,7 @@ import {
 
 const initialState = {
   status: 'INIT',
+  person: null,
   error: null,
 };
 
@@ -20,10 +21,12 @@ export default (state = initialState, action) => {
     case SUCCESS:
       return update(state, {
         status: { $set: 'SUCCESS' },
+        person: { $set: action.person },
       });
     case FAILURE:
       return update(state, {
         status: { $set: 'FAILURE' },
+        person: { $set: null },
         error: { $set: action.error },
       });
     default:

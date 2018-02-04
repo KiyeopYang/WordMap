@@ -39,11 +39,11 @@ router.post(
         updateOne: {
           filter: {
             person: personId,
-            wordId: fault.wordId,
+            wordId: fault._id,
           },
           update: {
             person: personId,
-            wordId: fault.wordId,
+            wordId: fault._id,
             word: fault.word,
             meaning: fault.meaning,
             weight: fault.weight,

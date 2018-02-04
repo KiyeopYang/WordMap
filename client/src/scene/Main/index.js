@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import {
@@ -9,7 +9,7 @@ import { push } from 'react-router-redux';
 import loader from '../../data/loader/actions';
 import * as noticeDialogActions from '../../data/noticeDialog/actions';
 import * as authActions from './data/auth/actions';
-import Login from './components/Login';
+import Login from './scene/Login';
 import Start from './scene/Start';
 import AuthRoute from './modules/AuthRoute';
 
@@ -19,13 +19,13 @@ class Main extends React.Component {
     this.props.authRequest();
   }
   render() {
-    console.log(this.props);
     const {
       person,
     } = this.props.auth;
     const isAuth = person !== null;
+    console.log(this.props.state);
     return (
-      <div>
+      <Fragment>
         <Switch>
           <AuthRoute
             mode="auth"
@@ -42,7 +42,7 @@ class Main extends React.Component {
             component={Start}
           />
         </Switch>
-      </div>
+      </Fragment>
     )
   }
 }

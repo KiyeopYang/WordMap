@@ -8,9 +8,10 @@ const waiting = () => {
     type: WAITING,
   };
 };
-const success = () => {
+const success = (person) => {
   return {
     type: SUCCESS,
+    person,
   };
 };
 const failure = (error) => {
@@ -25,7 +26,7 @@ export const request = () => {
     return new Promise((resolve, reject) => {
       const { person } = localStorage;
       if (person) {
-        resolve(person);
+        resolve(JSON.parse(person));
       } else {
         reject();
       }
